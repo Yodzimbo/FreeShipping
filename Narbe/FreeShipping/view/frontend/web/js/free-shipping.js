@@ -39,7 +39,6 @@ define([
                 if (self.subtotal > 0 && self.subtotal < self.value) {
                     var subtotalRemaining = self.value - self.subtotal;
                     var formattedSubtotalRemaining = self.formatCurrency(subtotalRemaining);
-                    debugger
                     return self.messageItemsInCart + " " + formattedSubtotalRemaining;
                 }
 
