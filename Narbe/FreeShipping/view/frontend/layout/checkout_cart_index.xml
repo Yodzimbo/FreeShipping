@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_cart_item_renderers"/>
+    <body>
+        <referenceContainer name="content">
+            <block name="free.shipping"
+                   class="Narbe\FreeShipping\Block\FreeShipping"
+                   template="Narbe_FreeShipping::free-shipping.phtml"
+                   before="-"
+            >
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="free-shipping" xsi:type="array">
+                                <item name="component" xsi:type="string">Narbe_FreeShipping/js/free-shipping</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

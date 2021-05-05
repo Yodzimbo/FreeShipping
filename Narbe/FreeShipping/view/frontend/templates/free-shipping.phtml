@@ -1,0 +1,29 @@
+<?php
+/* @var $block Magento\Framework\View\Element\Template */
+?>
+
+<?php if($block->isEnabled()): ?>
+    <div id="free-shipping" data-bind="scope: 'free-shipping'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "#free-shipping": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "free-shipping": {
+                        "component": "Narbe_FreeShipping/js/free-shipping",
+                        "config": {
+                            "value": "<?= $block->getValueFreeShipping(); ?>",
+                            "messageDefault": "<?= $block->getMessageDefault(); ?>",
+                            "messageItemsInCart": "<?= $block->getMessageItemsInCart(); ?>",
+                            "messageFreeShipping": "<?= $block->getMessageFreeShipping(); ?>",
+                            "currency": "<?= $block->getCurrentCurrencySymbol(); ?>"
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
